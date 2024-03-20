@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading Portfolio</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+    <style>
+        /* Styles de base pour les animations */
+
+        html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Empêche le défilement */
+}
+
+@font-face {
+    font-family: 'bruliadisplay';
+    src: url('fonts/brulia-display-webfont.woff2') format('woff2'),
+         url('fonts/brulia-display-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+section {
+    padding: 10px;
+    border: 1.5px solid black;
+    background-color: white;
+}
+
+pre {
+    /* Gere contenue du ascii */
+    font-family: 'bruliadisplay', sans-serif;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Style de base pour les conteneurs d'animation */
+
+.bouton {
+    border: 1.5px solid black; /* Ajoute une bordure au cadre */
+    background-color: white;
+    padding: 10px; /* Ajoute un espace entre le texte et la bordure */
+    text-align: center; /* Centre le texte */
+    position: absolute; /* Positionne le cadre de manière absolue par rapport à son conteneur parent */
+    top: 50%; /* Positionne le haut du cadre à 50% de la hauteur du conteneur parent */
+    left: 50%; /* Positionne le côté gauche du cadre à 50% de la largeur du conteneur parent */
+    transform: translate(-50%, -50%); /* Centre précisément le cadre en ajustant sa position */
+    width: 20%; /* Ou toute autre largeur selon le besoin */
+    z-index: 10; /* Assure que le cadre se situe au-dessus des autres éléments */
+}
+
+.cadre-noir {
+    border: 1.5px solid black; /* Ajoute une bordure au cadre */
+    background-color: white;
+    padding: 10px; /* Ajoute un espace entre le cadre et le contenu */
+    position: absolute; /* Positionnement absolu par rapport au conteneur parent */
+    top: 43.5%; /* Légèrement décalé vers le bas par rapport au premier cadre */
+    left: 40.5%; /* Légèrement décalé vers la droite par rapport au premier cadre */
+    width: 20%; /* Largeur du cadre, ajustez selon les besoins */
+    height: 5%;
+    z-index: 9; /* Assure que ce cadre est derrière le premier */
+    /* Pas besoin de texte-align ici car le cadre est vide */
+}
+
+.texte {
+    font-size: 35px; /* Définit la taille du texte */
+    font-family: 'bruliadisplay', sans-serif;
+    font-weight: bold; /* Rend le texte en gras */
+    /*border-right: .1em solid; /* Le curseur simulé */
+    /*animation: blink-caret .75s step-end infinite;*/
+}
+
+/*@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}*/
+
+.ascii1 {
+    /* Gere contenue du ascii */
+    font-size: 0.9em;
+    color: black;
+}
+
+.ascii2 {
+    /* Gere contenue du ascii */
+    font-size: 0.75em;
+    color: black;
+}
+
+.ascii3 {
+    /* Gere contenue du ascii */
+    font-size: 0.6em;
+    color: black;
+}
+
+.ascii4 {
+    /* Gere contenue du ascii */
+    font-size: 0.8em;
+    color: black;
+}
+
+.module {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crée deux colonnes de largeur égale */
+    grid-template-rows: repeat(2, auto); /* Crée deux rangées de hauteur automatique */
+    grid-gap: 10px; /* Ajoute un espace de 20 pixels entre les conteneurs d'animation */
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    padding: 5px; /* Ajoute un espace de 10 pixels autour du contenu */
+}
+
+.animation-container1 {
+    grid-column: 1; /* Place le conteneur dans la première colonne */
+    grid-row: 1; /* Place le conteneur dans la première rangée */
+    display: flex;
+    justify-content: flex-start; /* Aligne l'animation à gauche */
+    align-items: center; /* Centre l'animation verticalement */
+    width: 100%; /* Réduit la largeur du conteneur à 100% de son conteneur parent */
+    height: auto;
+}
+
+.animation-container2 {
+    grid-column: 2; /* Place le conteneur dans la deuxième colonne */
+    grid-row: 1; /* Place le conteneur dans la première rangée */
+    display: flex;
+    justify-content: flex-end; /* Aligne l'animation à droite */
+    align-items: center; /* Centre l'animation verticalement */
+    width: 70%; /* Réduit la largeur du conteneur à 100% de son conteneur parent */
+    height: auto;
+}
+
+.animation-container3 {
+    grid-column: 1; /* Place le conteneur dans la première colonne */
+    grid-row: 2; /* Place le conteneur dans la deuxième rangée */
+    display: flex;
+    justify-content: flex-start; /* Aligne l'animation à gauche */
+    align-items: center; /* Centre l'animation verticalement */
+    width: 60%; /* Réduit la largeur du conteneur à 100% de son conteneur parent */
+    height: 100px;
+    margin-left: 50px;
+}
+
+.animation-container4 {
+    grid-column: 2; /* Place le conteneur dans la deuxième colonne */
+    grid-row: 2; /* Place le conteneur dans la deuxième rangée */
+    display: flex;
+    justify-content: flex-end; /* Aligne l'animation à droite */
+    align-items: center; /* Centre l'animation verticalement */
+    width: 70%; /* Réduit la largeur du conteneur à 100% de son conteneur parent */
+    height: auto;
+}
+
+@media (max-width: 600px) {
+
+    .bouton {
+        width: 40%; /* Ajuste la largeur sur les petits écrans */
+        padding: 20px; /* Plus d'espace autour du texte */
+    }
+
+    .cadre-noir {
+        width: 45%; /* Réduit la largeur pour les petits écrans */
+        height: 5%; /* Réduit la hauteur pour les petits écrans */
+        left: 30%;
+    }
+
+    .texte {
+        font-size: 20px; /* Taille de texte plus adaptée */
+    }
+
+    .module {
+        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+    }
+
+    /* Adaptez la taille de police pour les différentes sections ASCII */
+    .ascii1, .ascii2, .ascii3, .ascii4 {
+        font-size: 0.5em; /* Taille plus petite pour économiser de l'espace */
+    }
+
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="bouton">
+        <div class="texte">Loading :) ...</div>
+    </div>
+    <script>
+        const element = document.querySelector('.texte');
+        // Supposons que la partie animée est "Loading :)" et que vous voulez garder " ..." statique
+        const animatedText = "Loading";
+        const staticText = " :)"; // Texte statique à garder à la fin
+        element.textContent = staticText; // Initialisation avec le texte statique
+        let i = 0;
+        let backward = false;
+    
+        function typeWriter() {
+            if (!backward) {
+                if (i < animatedText.length) {
+                    element.textContent = animatedText.substring(0, i + 1) + staticText;
+                    i++;
+                    setTimeout(typeWriter, 150); // Vitesse d'écriture
+                } else if (i === animatedText.length) {
+                    setTimeout(() => {
+                        backward = true;
+                        typeWriter();
+                    }, 1000); // Délai avant de commencer à effacer
+                }
+            } else {
+                if (i > 0) {
+                    element.textContent = animatedText.substring(0, i - 1) + staticText;
+                    i--;
+                    setTimeout(typeWriter, 150); // Vitesse d'effacement
+                } else {
+                    backward = false;
+                    setTimeout(typeWriter, 150); // Délai avant de recommencer à écrire
+                }
+            }
+        }
+    
+        typeWriter();
+    </script>
+    <div class="cadre-noir"></div>
+    <div class="module">
+        <div class="animation-container1">
+            <section id="animation1">
+                <pre class="ascii1"></pre>
+            </section>
+        </div>
+        <div class="animation-container2">
+            <section id="animation2">
+                <pre class="ascii2"></pre>
+            </section>
+        </div>
+        <div class="animation-container3">
+            <section id="animation3">
+                <pre class="ascii3"></pre>
+            </section>
+        </div>
+        <div class="animation-container4">
+            <section id="animation4">
+                <pre class="ascii4"></pre>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Ajoutez d'autres sections ici pour plus d'animations -->
+
+    <script src="flower.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            // Définit la durée pendant laquelle la page index.html reste affichée (en millisecondes)
+            const duration = 7000 // Par exemple, 7000 millisecondes (7 secondes)
+
+            setTimeout(function() {
+                // Redirige l'utilisateur vers main.html après la durée spécifiée
+                window.location.href = 'main.html';
+            }, duration);
+        });
+    </script>
+</body>
+</html>
