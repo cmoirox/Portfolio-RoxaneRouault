@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxane Rouault</title>
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<noscript>
+    <meta http-equiv="refresh" content="0; URL=index.html">
+</noscript>
+<body>
+    <header>
+        <div class="container-header">
+            <div id="branding">
+                <a href="main.html" style="text-decoration: none; color: inherit;">
+                    <h1>Roxane Rouault</h1>
+                </a>
+                <a href="info.html" style="text-decoration: none; color: inherit;">
+                    <p>Info</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélection des liens dans le #branding
+            const brandingLinks = document.querySelectorAll('#branding a');
+    
+            brandingLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Vérification pour cibler le h1 ou p à l'intérieur du lien
+                    const textElement = this.querySelector('h1') || this.querySelector('p');
+                    if(textElement) {
+                        // Stocker le texte original et inverser le texte au survol
+                        const originalText = textElement.textContent;
+                        textElement.textContent = textElement.textContent.split('').reverse().join('');
+    
+                        // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                        setTimeout(() => {
+                            textElement.textContent = originalText;
+                        }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                    }
+                });
+            });
+        });
+    </script>
+    <main>
+        <div class="container-main">
+            <p id="animated-text">Welcome to my Portfolio.<br>
+                <br>
+            I am a design and communication<br>
+            strategy student at École Estienne in Paris.</p>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const textElement = document.getElementById('animated-text');
+                textElement.innerHTML = '<span class="text-content"></span><span class="cursor">|</span>';
+                const textContentElement = textElement.querySelector('.text-content');
+                const cursorElement = textElement.querySelector('.cursor');
+            
+                // Remplacez les sauts de ligne \n par des balises <br> si nécessaire
+                const fullText = "Welcome to my Portfolio :)<br><br>I am a design and communication strategy<br>student at École Estienne in Paris.";
+                let index = 0;
+                let reverse = false;
+                let typingSpeed = 35;
+            
+                function updateText() {
+                    if (!reverse) {
+                        if (index < fullText.length) {
+                            let char = fullText[index];
+                            let nextChars = fullText.substring(index, Math.min(index + 4, fullText.length));
+                            // Vérifie si les prochains caractères forment une balise <br> et les ajoute en une fois
+                            if (nextChars === '<br>') {
+                                index += 4; // Passe la balise <br>
+                            } else {
+                                index++;
+                            }
+                            textContentElement.innerHTML = fullText.slice(0, index);
+                        } else {
+                            setTimeout(() => reverse = true, 5000); // Attend avant de commencer à effacer
+                        }
+                    } else {
+                        if (index > 0) {
+                            // Ajuste pour effacer correctement quand on rencontre une balise <br>
+                            if (fullText.slice(index - 4, index) === '<br>') {
+                                index -= 4;
+                            } else {
+                                index--;
+                            }
+                            textContentElement.innerHTML = fullText.slice(0, index);
+                        } else {
+                            reverse = false; // Recommence à écrire le texte
+                        }
+                    }
+                    // Assure que le curseur est toujours à la fin du texte
+                    textElement.appendChild(cursorElement);
+                }
+            
+                setInterval(updateText, typingSpeed);
+            });
+        </script>                     
+        <div class="container-right">
+            <div class="project-module">
+                <a href="fontkroma-IA.html" style="text-decoration: none; color: inherit;">
+                    <p>FontKroma - AI model</p>
+                </a>
+                <h3 class="project-subtitle">Creation of an AI model to generate typographic characters. Artistic Direction, interface, motion design.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <video class="video-style" src="https://www.dropbox.com/s/gvtwmc78i22mlqf/Trailer_sans_son.mp4?raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <div class="project-info">
+                    <span class="project-year">2023</span>
+                    <a href="fontkroma-IA.html">
+                        <span class="project-tags">See more</span>
+                    </a>                    
+                </div>
+                <hr class="ligne">                                      
+            </div>
+            <div class="project-module">
+                <a href="horsfer.html" style="text-decoration: none; color: inherit;">
+                    <p>Horsfer Local Media - Team Project</p>
+                </a>
+                <h3 class="project-subtitle">Launching a local musical media. Creation of the Artistic Direction, motion design, posts, branding.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <video class="video-style" src="https://www.dropbox.com/scl/fi/s0up8f16hfwgsrgead12q/horsfer-trailer-nb_1_1_1.mp4?rlkey=i22wo7kfbazvylqq6783x49wa&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <div class="project-info">
+                    <span class="project-year">2023</span> <!-- Texte avec style italique -->
+                    <a href="horsfer.html">
+                        <span class="project-tags">See more</span> <!-- Texte avec trait de soulignage -->
+                    </a>
+                </div>
+                <hr class="ligne">
+            </div>
+            <div class="project-module">
+                <a href="matrix-lab.html" style="text-decoration: none; color: inherit;">
+                    <p>Matrix_Lab - Photo & 3D Compositing</p>
+                </a>
+                <h3 class="project-subtitle">Creation of a photo series for a school project dealing with science fiction. From the photo shoot to the editing.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <img class="project-image" src="https://www.dropbox.com/scl/fi/3kktdi1is3xv8apymgi96/MatrixLabCouv.png?rlkey=6evwaust480fwjv07o2hxeehh&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <div class="project-info">
+                    <span class="project-year">2023</span> <!-- Texte avec style italique -->
+                    <a href="matrix-lab.html">
+                        <span class="project-tags">See more</span> <!-- Texte avec trait de soulignage -->
+                    </a>
+                </div>
+                <hr class="ligne">
+            </div>
+            <div class="project-module">
+                <p>Experimentation - 3D Animation</p>
+                <h3 class="project-subtitle">Production of a 3D animation using procedural generation through Geometry Nodes in Blender.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <video class="video-style" src="https://www.dropbox.com/scl/fi/41x0gkuovfglymnjey5zm/R-ve_1.mp4?rlkey=v84p9904hulw7rv9gv45i7lld&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <div class="project-info">
+                    <span class="project-year">2023</span> <!-- Texte avec style italique -->
+                </div>
+                <hr class="ligne">
+            </div>
+            <div class="project-module">
+                <p>Procedural Generation - Animation</p>
+                <h3 class="project-subtitle">Creation of several typographic animations using procedural generation via TouchDesigner.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <video class="video-style" src="https://www.dropbox.com/scl/fi/grisjc6taxkzgqr29oc7b/TypoAnim.mp4?rlkey=uqcuwqpq6rqjgg3zy6881r183&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <div class="project-info">
+                    <span class="project-year">2023</span> <!-- Texte avec style italique -->
+                </div>
+                <hr class="ligne">
+            </div>
+            <div class="project-module">
+                <a href="thesis.html" style="text-decoration: none; color: inherit;">
+                    <p>AI and Digital Creation - Thesis</p>
+                </a>
+                <h3 class="project-subtitle">Completion of an end-of-studies thesis focusing on AI in the fields of digital creation.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <img class="project-image" src="https://www.dropbox.com/scl/fi/s4xufl0dhsjvez7764wel/MemoireCouv.png?rlkey=h6kftcrm07crxh8b8yqmkufj1&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <div class="project-info">
+                    <span class="project-year">2022</span> <!-- Texte avec style italique -->
+                    <a href="thesis.html">
+                        <span class="project-tags">See more</span> <!-- Texte avec trait de soulignage -->
+                    </a>
+                </div>
+                <hr class="ligne">
+            </div>
+            <div class="project-module">
+                <p>Fictitious Brand OPUR - Visual Identity</p>
+                <h3 class="project-subtitle">Imaginary creation of a visual identity for a water brand. Logo, graphic charter, communication...</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <video class="video-style" src="https://www.dropbox.com/scl/fi/hrx9uehqpmit077l8pwrh/Opur-Spot2.mp4?rlkey=q99xhi1oicyy6zdf5tp32e53y&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <div class="project-info">
+                    <span class="project-year">2022</span> <!-- Texte avec style italique -->
+                </div>
+                <hr class="ligne">
+            </div>
+            <div class="project-module">
+                <a href="brainodes.html" style="text-decoration: none; color: inherit;">
+                    <p>Brainodes Project - Illustration & Poster</p>
+                </a>
+                <h3 class="project-subtitle">Creation of a series of illustrated posters focusing on technology. Illustration, composition, vector</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <img class="project-image" src="https://www.dropbox.com/scl/fi/w3y4f5mb2i4shh012dsaj/BrainNodesCouv.png?rlkey=h19pche46y1qof54cxutmsfql&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <div class="project-info">
+                    <span class="project-year">2022</span> <!-- Texte avec style italique -->
+                    <a href="brainodes.html">
+                        <span class="project-tags">See more</span> <!-- Texte avec trait de soulignage -->
+                    </a>
+                </div>
+                <hr class="ligne">
+            </div>
+            <div class="project-module">
+                <p>Musical Cartoon  - 2D Animation</p>
+                <h3 class="project-subtitle">Production of an animation set to a specified piece of music for a school project.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <video class="video-style" src="https://www.dropbox.com/scl/fi/gzdug3xl9mgfunqioy7es/Animation2D2.mp4?rlkey=p1k01ntprkobbilqx5mw6v4gg&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <div class="project-info">
+                    <span class="project-year">2021</span> <!-- Texte avec style italique -->
+                </div>
+                <hr class="ligne">
+                <h3 class="texte-credit-site">This website was lovingly created and designed by me, with great care and attention to detail :) </h3>
+            </div>
+            <!-- Répétez pour autant de projets que vous avez -->
+        </div>               
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const videos = document.querySelectorAll('.video-style');
+      
+          videos.forEach(video => {
+            if ('playsInline' in video) {
+              video.playsInline = true;
+            } else {
+              video.webkitPlaysInline = true;
+            }
+      
+            video.play().catch(error => {
+              // Si la lecture automatique échoue, affichez un message d'erreur ou effectuez une action de secours
+              console.error('Error in autoplay:', error);
+            });
+          });
+        });
+      </script>           
+    <footer>
+        <p><a href="https://www.instagram.com/cmoirox/">Instagram</a></p>
+        <p><a href="https://www.linkedin.com/in/roxane-rouault-b7b5541b6/">Linkedin</a></p>
+        <p><a href="https://www.behance.net/roxanerouault">Behance</a></p>
+        <p class="email-style">rouault.roxane@gmail.com</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner uniquement les liens spécifiques d'Instagram, Linkedin, et Behance
+            const specificLinks = document.querySelectorAll('footer p a[href*="instagram.com"], footer p a[href*="linkedin.com"], footer p a[href*="behance.net"]');
+    
+            specificLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Stocker le texte original et inverser le texte au survol
+                    const originalText = this.textContent;
+                    this.textContent = this.textContent.split('').reverse().join('');
+    
+                    // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                });
+    
+                // Note: Pas besoin d'un gestionnaire pour 'mouseout' car setTimeout gère la durée de l'effet
+            });
+        });
+    </script>         
+</body>
+</html>
+

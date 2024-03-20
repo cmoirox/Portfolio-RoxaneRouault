@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxane Rouault</title>
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div id="branding">
+                <a href="main.html" style="text-decoration: none; color: inherit;">
+                    <h1>Roxane Rouault</h1>
+                </a>
+                <a href="info.html" style="text-decoration: none; color: inherit;">
+                    <p>Info</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélection des liens dans le #branding
+            const brandingLinks = document.querySelectorAll('#branding a');
+    
+            brandingLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Vérification pour cibler le h1 ou p à l'intérieur du lien
+                    const textElement = this.querySelector('h1') || this.querySelector('p');
+                    if(textElement) {
+                        // Stocker le texte original et inverser le texte au survol
+                        const originalText = textElement.textContent;
+                        textElement.textContent = textElement.textContent.split('').reverse().join('');
+    
+                        // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                        setTimeout(() => {
+                            textElement.textContent = originalText;
+                        }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                    }
+                });
+            });
+        });
+    </script>
+    <main>
+        <div class="container-detail-title-projet">
+            <p>Brainodes - 2023</p>
+        </div>
+        <div class="container-detail-subtitle-projet">
+            <div class="project-detail-placement">
+                <p>Illustration & Poster</p>
+                <h3 class="presentation-projet">Brainodes is a course project on the theme of science fiction. The aim here was to play on the word 'Brainodes', meaning: brain nodes. It's a pictorial representation of our dependency on screens during our various digital tasks.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/4awulml716rg6g7izajll/brainodes1.png?rlkey=icdq8rp8iee6tpve1eu3yvfjg&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/mmfyg0yy3z6iydwkdxlds/BR1.mp4?rlkey=8hicateszr6j5gjqkehjm62ey&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/uyvx2xb8fg6wioj28gmnh/brainodes2.png?rlkey=fy4l5vwmry3vrpfxq6xdb613m&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/c1s1o2cfi2wqlpvu6qx09/BR2.mp4?rlkey=afsqhb47bhphlz5dxidlohs8y&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/njr9alodmo86lgpu87bce/brainodes3.png?rlkey=4r08nivrrm0cxdx9zn7sew937&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/nnqga7ncwhtx8eo0hyxaf/BR3.mp4?rlkey=yluyxableoemscewlrocevauh&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <h3 class="texte">Composition & 3D card.</h3>
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/iydkyoqtxnsd6kngasjo8/brainodes5.png?rlkey=aoghd4c5hjtjch8bmmnb0r4me&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+            </div>
+            <!-- Répétez pour autant de projets que vous avez -->
+        </div>               
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const videos = document.querySelectorAll('.project-detail-video');
+      
+          videos.forEach(video => {
+            if ('playsInline' in video) {
+              video.playsInline = true;
+            } else {
+              video.webkitPlaysInline = true;
+            }
+      
+            video.play().catch(error => {
+              // Si la lecture automatique échoue, affichez un message d'erreur ou effectuez une action de secours
+              console.error('Error in autoplay:', error);
+            });
+          });
+        });
+      </script>
+    <footer>
+        <p><a href="https://www.instagram.com/cmoirox/">Instagram</a></p>
+        <p><a href="https://www.linkedin.com/in/roxane-rouault-b7b5541b6/">Linkedin</a></p>
+        <p><a href="https://www.behance.net/roxanerouault">Behance</a></p>
+        <p class="email-style">rouault.roxane@gmail.com</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner uniquement les liens spécifiques d'Instagram, Linkedin, et Behance
+            const specificLinks = document.querySelectorAll('footer p a[href*="instagram.com"], footer p a[href*="linkedin.com"], footer p a[href*="behance.net"]');
+    
+            specificLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Stocker le texte original et inverser le texte au survol
+                    const originalText = this.textContent;
+                    this.textContent = this.textContent.split('').reverse().join('');
+    
+                    // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                });
+            });
+        });
+    </script> 
+</body>
+</html>
+

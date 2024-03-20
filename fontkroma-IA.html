@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxane Rouault</title>
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div id="branding">
+                <a href="main.html" style="text-decoration: none; color: inherit;">
+                    <h1>Roxane Rouault</h1>
+                </a>
+                <a href="info.html" style="text-decoration: none; color: inherit;">
+                    <p>Info</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélection des liens dans le #branding
+            const brandingLinks = document.querySelectorAll('#branding a');
+    
+            brandingLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Vérification pour cibler le h1 ou p à l'intérieur du lien
+                    const textElement = this.querySelector('h1') || this.querySelector('p');
+                    if(textElement) {
+                        // Stocker le texte original et inverser le texte au survol
+                        const originalText = textElement.textContent;
+                        textElement.textContent = textElement.textContent.split('').reverse().join('');
+    
+                        // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                        setTimeout(() => {
+                            textElement.textContent = originalText;
+                        }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                    }
+                });
+            });
+        });
+    </script>
+    <main>
+        <div class="container-detail-title-projet">
+            <p>FontKroma AI - 2023</p>
+        </div>
+        <div class="container-detail-subtitle-projet">
+            <div class="project-detail-placement">
+                <p>End of Studies Project</p>
+                <h3 class="presentation-projet">FontKroma is a platform concept that uses AI for the creation of typographic characters. The main objective of this platform is to democratize typography for a wider audience through Artificial Intelligence. To do this, the platform allows users to generate, edit, learn about, and share typographic characters. For this project, I had to use my programming skills: developing an AI model, and in artistic direction: visual identity, motion design, UI UX.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/qhz09muwu9o65qbdcvjvv/fontkroma1.png?rlkey=xpyb3mk13j2fgpmzz7xdxxis2&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/hzsi7rrx4cz0bhive9w8k/fontkroma2.png?rlkey=4kb9ilhpct7eezcsdjiby44c5&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/yfui6k9fcdqwv7wp1pu99/fontkroma3.png?rlkey=k0v867fqnvte6o8b0spqj55lw&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/2dtxpvta2qhqb9qb2pc8q/fontkroma4.png?rlkey=ydzpp7czdmosfwkkizispnr2e&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/zf23i05gd8xkrhz4vpu4m/fontkroma5.png?rlkey=l0rwhqv78bmn27rmgbez0d8l4&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <h3 class="texte">The result of several typographies obtained after multiple iterations of my AI model, which utilizes a generative model called CGAN.</h3>
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/y6ql6ephgba05wackxlei/fontkroma6.png?rlkey=yeh8yfi42hx6teavnjm0clzt8&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <h3 class="texte">User interface of the FontKroma Typographic AI and an AI-generated character alphabet.</h3>
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/8gqsyepaam48xlstkle7e/fontkroma7.png?rlkey=da70mw3yzomyqezcc5bbec7y1&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <h3 class="texte">Screen of the script for the neural networks of FontKroma, featuring a generator network and a discriminator network. Essential for designing a CGAN model.</h3>
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/irnlv7mq5z5q3ixl31hxi/fontkroma8.png?rlkey=86cl7wnpjrotkkmf0f6fhdzhe&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/hcrim3v0zkohrca3nf5rt/fontkroma.mp4?rlkey=kgvy5uqe19wtykaxezdqmsnmu&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <h3 class="texte">Creation of the interface design for the FontKroma website & motion design to promote the product.</h3>
+            </div>
+            <!-- Répétez pour autant de projets que vous avez -->
+        </div>               
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const videos = document.querySelectorAll('.project-detail-video');
+      
+          videos.forEach(video => {
+            if ('playsInline' in video) {
+              video.playsInline = true;
+            } else {
+              video.webkitPlaysInline = true;
+            }
+      
+            video.play().catch(error => {
+              // Si la lecture automatique échoue, affichez un message d'erreur ou effectuez une action de secours
+              console.error('Error in autoplay:', error);
+            });
+          });
+        });
+      </script>
+    <footer>
+        <p><a href="https://www.instagram.com/cmoirox/">Instagram</a></p>
+        <p><a href="https://www.linkedin.com/in/roxane-rouault-b7b5541b6/">Linkedin</a></p>
+        <p><a href="https://www.behance.net/roxanerouault">Behance</a></p>
+        <p class="email-style">rouault.roxane@gmail.com</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner uniquement les liens spécifiques d'Instagram, Linkedin, et Behance
+            const specificLinks = document.querySelectorAll('footer p a[href*="instagram.com"], footer p a[href*="linkedin.com"], footer p a[href*="behance.net"]');
+    
+            specificLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Stocker le texte original et inverser le texte au survol
+                    const originalText = this.textContent;
+                    this.textContent = this.textContent.split('').reverse().join('');
+    
+                    // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                });
+            });
+        });
+    </script> 
+</body>
+</html>
+

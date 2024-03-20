@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading Portfolio</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+    <style>
+        /* Styles de base pour les animations */
+
+        html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Empêche le défilement */
+}
+
+@font-face {
+    font-family: 'bruliadisplay';
+    src: url('fonts/brulia-display-webfont.woff2') format('woff2'),
+         url('fonts/brulia-display-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+section {
+    padding: 10px;
+    border: 1.5px solid black;
+    background-color: white;
+}
+
+pre {
+    /* Gere contenue du ascii */
+    font-family: 'bruliadisplay', sans-serif;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Style de base pour les conteneurs d'animation */
+
+.ascii1 {
+    /* Gere contenue du ascii */
+    font-size: 0.9em;
+    color: black;
+}
+
+.ascii2 {
+    /* Gere contenue du ascii */
+    font-size: 0.75em;
+    color: black;
+}
+
+.ascii3 {
+    /* Gere contenue du ascii */
+    font-size: 0.6em;
+    color: black;
+}
+
+.ascii4 {
+    /* Gere contenue du ascii */
+    font-size: 0.8em;
+    color: black;
+}
+
+.module {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crée deux colonnes de largeur égale */
+    grid-template-rows: repeat(2, auto); /* Crée deux rangées de hauteur automatique */
+    grid-gap: 10px; /* Ajoute un espace de 20 pixels entre les conteneurs d'animation */
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    padding: 5px; /* Ajoute un espace de 10 pixels autour du contenu */
+}
+
+.animation-container1 {
+    grid-column: 1; /* Place le conteneur dans la première colonne */
+    grid-row: 1; /* Place le conteneur dans la première rangée */
+    display: flex;
+    justify-content: flex-start; /* Aligne l'animation à gauche */
+    align-items: center; /* Centre l'animation verticalement */
+    width: 100%; /* Réduit la largeur du conteneur à 100% de son conteneur parent */
+    height: auto;
+}
+
+.animation-container2 {
+    grid-column: 2; /* Place le conteneur dans la deuxième colonne */
+    grid-row: 1; /* Place le conteneur dans la première rangée */
+    display: flex;
+    justify-content: flex-end; /* Aligne l'animation à droite */
+    align-items: center; /* Centre l'animation verticalement */
+    width: 70%; /* Réduit la largeur du conteneur à 100% de son conteneur parent */
+    height: auto;
+}
+
+.animation-container3 {
+    grid-column: 1; /* Place le conteneur dans la première colonne */
+    grid-row: 2; /* Place le conteneur dans la deuxième rangée */
+    display: flex;
+    justify-content: flex-start; /* Aligne l'animation à gauche */
+    align-items: center; /* Centre l'animation verticalement */
+    width: 60%; /* Réduit la largeur du conteneur à 100% de son conteneur parent */
+    height: 100px;
+    margin-left: 50px;
+}
+
+.animation-container4 {
+    grid-column: 2; /* Place le conteneur dans la deuxième colonne */
+    grid-row: 2; /* Place le conteneur dans la deuxième rangée */
+    display: flex;
+    justify-content: flex-end; /* Aligne l'animation à droite */
+    align-items: center; /* Centre l'animation verticalement */
+    width: 70%; /* Réduit la largeur du conteneur à 100% de son conteneur parent */
+    height: auto;
+}
+
+@media (max-width: 600px) {
+
+    .module {
+        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+    }
+
+    /* Adaptez la taille de police pour les différentes sections ASCII */
+    .ascii1, .ascii2, .ascii3, .ascii4 {
+        font-size: 0.5em; /* Taille plus petite pour économiser de l'espace */
+    }
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="module">
+        <div class="animation-container1">
+            <section id="animation1">
+                <pre class="ascii1"></pre>
+            </section>
+        </div>
+        <div class="animation-container2">
+            <section id="animation2">
+                <pre class="ascii2"></pre>
+            </section>
+        </div>
+        <div class="animation-container3">
+            <section id="animation3">
+                <pre class="ascii3"></pre>
+            </section>
+        </div>
+        <div class="animation-container4">
+            <section id="animation4">
+                <pre class="ascii4"></pre>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Ajoutez d'autres sections ici pour plus d'animations -->
+
+    <script src="flower.js"></script>
+</body>
+</html>

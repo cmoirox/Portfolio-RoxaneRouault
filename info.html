@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxane Rouault</title>
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div id="branding">
+                <a href="main.html" style="text-decoration: none; color: inherit;">
+                    <h1>Roxane Rouault</h1>
+                </a>
+                <a href="info.html" style="text-decoration: none; color: inherit;">
+                    <p>Info</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélection des liens dans le #branding
+            const brandingLinks = document.querySelectorAll('#branding a');
+    
+            brandingLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Vérification pour cibler le h1 ou p à l'intérieur du lien
+                    const textElement = this.querySelector('h1') || this.querySelector('p');
+                    if(textElement) {
+                        // Stocker le texte original et inverser le texte au survol
+                        const originalText = textElement.textContent;
+                        textElement.textContent = textElement.textContent.split('').reverse().join('');
+    
+                        // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                        setTimeout(() => {
+                            textElement.textContent = originalText;
+                        }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                    }
+                });
+            });
+        });
+    </script>
+    <main>
+        <div class="container-detail-subtitle-info">
+            <div class="text-wrapper">
+                <h3 class="titre-info-gros">
+                    Hello, I'm Roxane.
+                </h3>
+                <script>
+                    const element = document.querySelector('.titre-info-gros');
+                    // Supposons que la partie animée est "Loading :)" et que vous voulez garder " ..." statique
+                    const animatedText = "Hello, I'm Roxane";
+                    const staticText = "."; // Texte statique à garder à la fin
+                    element.textContent = staticText; // Initialisation avec le texte statique
+                    let i = 0;
+                    let backward = false;
+                
+                    function typeWriter() {
+                        if (!backward) {
+                            if (i < animatedText.length) {
+                                element.textContent = animatedText.substring(0, i + 1) + staticText;
+                                i++;
+                                setTimeout(typeWriter, 100); // Vitesse d'écriture
+                            } else if (i === animatedText.length) {
+                                setTimeout(() => {
+                                    backward = true;
+                                    typeWriter();
+                                }, 9000000000); // Délai avant de commencer à effacer
+                            }
+                        } else {
+                            if (i > 0) {
+                                element.textContent = animatedText.substring(0, i - 1) + staticText;
+                                i--;
+                                setTimeout(typeWriter, 150); // Vitesse d'effacement
+                            } else {
+                                backward = false;
+                                setTimeout(typeWriter, 150); // Délai avant de recommencer à écrire
+                            }
+                        }
+                    }
+                
+                    typeWriter();
+                </script>
+                <!-- Nouveau bloc de texte -->
+                <p class="texte-info-middle">
+                    I am 22 years old and I was born and raised in Quimper, Brittany. I hold a 3-year diploma in Digital Design.<br>
+                    <br> 
+                    Today, I am a student in design and communication strategy at École Estienne in Paris. <br>
+                    <br>
+                    I am passionate about the fields of creation in their entirety. I love to explore and experiment with different techniques.<br>
+                    <br>
+                    Learning new skills every day, whether it is with software, technologies, or even new professions.
+                </p>
+                <p class="texte-info-small-color">
+                    Saleswoman in retail.
+                </p>
+                <p class="texte-info-small">
+                    My first professional experience was in a ready-to-wear store.<br>
+                    Then I worked in various sales locations: food, charitable...<br>
+                    I learned customer relations, sales, stock management, as well as cash handling.
+                </p>
+                <p class="texte-info-small-color">
+                    The restaurant industry.
+                </p>
+                <p class="texte-info-small">
+                    I then decided to step out of my comfort zone and explore the restaurant industry.<br>
+                    For 3 years, I worked in various restaurants while simultaneously with my studies.<br>
+                    I learned team management, anticipation, and time organization.
+                <p class="texte-info-small-color">
+                    Graphic design and creation.
+                </p>
+                <p class="texte-info-small">
+                    It was during an internship in Paris in 2022 that I truly had my first experience in creation.<br>
+                    During this internship, I was able to put my skills into practice.<br>
+                    I learned to adhere to specifications, and to realize the needs and objectives of a project.
+                </p>
+                <p class="texte-info-small-color">
+                    Freelancing.
+                </p>
+                <p class="texte-info-small">
+                    Today, I put my skills to work for various people.
+                </p>
+                <p class="texte-info-skills">
+                    Ambitious.
+                </p>
+                <p class="texte-info-skills">
+                    Motivated.
+                </p>
+                <p class="texte-info-skills">
+                    Creative.
+                </p>
+                <p class="texte-info-skills">
+                    Sociable.
+                </p>
+                <p class="texte-info-skills">
+                    Curious.
+                <p class="texte-info-small-color">
+                    2019.
+                </p>
+                <p class="texte-info-small">
+                    1 Year of Higher National Diploma in Communication at Jeanne d'Arc in Rennes, France.
+                </p>
+                <p class="texte-info-small-color">
+                    2023.
+                </p>
+                <p class="texte-info-small">
+                    Graduation with the diploma of Bachelor's degree in Digital Design at Le Paraclet in Quimper, France.
+                </p>
+                <p class="texte-info-small-color">
+                    Since 2023.
+                </p>
+                <p class="texte-info-small">
+                    Master 1 degree course in Design and Strategies of Communication at École Estienne in Paris, France.
+                </p>
+                <p class="texte-info-skills">
+                    Photoshop.
+                </p>
+                <p class="texte-info-skills">
+                    Illustrator.
+                </p>
+                <p class="texte-info-skills">
+                    Indesign.
+                </p>
+                <p class="texte-info-skills">
+                    After Effect.
+                </p>
+                <p class="texte-info-skills">
+                    Premiere Pro.
+                </p>
+                <p class="texte-info-skills">
+                    Blender.
+                </p>
+                <p class="texte-info-skills">
+                    Unreal Engine
+                </p>
+                <p class="texte-info-skills">
+                    TouchDesigner
+                </p>
+                <p class="texte-info-skills">
+                    HTML/CSS
+                </p>
+                <p class="texte-info-skills">
+                    And many others...
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><a href="https://www.instagram.com/cmoirox/">Instagram</a></p>
+        <p><a href="https://www.linkedin.com/in/roxane-rouault-b7b5541b6/">Linkedin</a></p>
+        <p><a href="https://www.behance.net/roxanerouault">Behance</a></p>
+        <p class="email-style">rouault.roxane@gmail.com</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner uniquement les liens spécifiques d'Instagram, Linkedin, et Behance
+            const specificLinks = document.querySelectorAll('footer p a[href*="instagram.com"], footer p a[href*="linkedin.com"], footer p a[href*="behance.net"]');
+    
+            specificLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Stocker le texte original et inverser le texte au survol
+                    const originalText = this.textContent;
+                    this.textContent = this.textContent.split('').reverse().join('');
+    
+                    // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                });
+            });
+        });
+    </script>    
+</body>
+</body>
+</html>
+

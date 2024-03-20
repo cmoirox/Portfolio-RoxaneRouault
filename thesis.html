@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxane Rouault</title>
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div id="branding">
+                <a href="main.html" style="text-decoration: none; color: inherit;">
+                    <h1>Roxane Rouault</h1>
+                </a>
+                <a href="info.html" style="text-decoration: none; color: inherit;">
+                    <p>Info</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélection des liens dans le #branding
+            const brandingLinks = document.querySelectorAll('#branding a');
+    
+            brandingLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Vérification pour cibler le h1 ou p à l'intérieur du lien
+                    const textElement = this.querySelector('h1') || this.querySelector('p');
+                    if(textElement) {
+                        // Stocker le texte original et inverser le texte au survol
+                        const originalText = textElement.textContent;
+                        textElement.textContent = textElement.textContent.split('').reverse().join('');
+    
+                        // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                        setTimeout(() => {
+                            textElement.textContent = originalText;
+                        }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                    }
+                });
+            });
+        });
+    </script>
+    <main>
+        <div class="container-detail-title-projet">
+            <p>Thesis about AI - 2022</p>
+        </div>
+        <div class="container-detail-subtitle-projet">
+            <div class="project-detail-placement">
+                <p>End-of-studies</p>
+                <h3 class="presentation-projet">This project marks the completion of an end-of-studies thesis, delving into the fascinating intersection of Artificial Intelligence (AI) and digital creation. The thesis is a comprehensive exploration of the theory and practical applications of AI in the digital creation landscape, as well as its prospective future developments. The project is segmented into three primary phases: Reflection, Design, and Layout.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/hcvebxt8jn0yxgk8pcdae/planche-memoire1.png?rlkey=9ytk0a46q5lzc9usz4h876lvg&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/h3wigqnx8b71ju1srdkn2/planche-memoire2.png?rlkey=ssbgwvr7ttjb9ywgkob39vks0&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/u03lh4y3dttmm8aph2qkj/planche-memoire3.png?rlkey=dpcpczyvch5sqr5kpap4iogez&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/77gt6weejb7w73lfde31i/planche-memoire4.png?rlkey=yq9iahi3mthtcdnassc326ak0&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/ut8d9ea70xlu6xre90qba/planche-memoire5.png?rlkey=wb4u3ybboeaox5x2kes0jgsaq&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <h3 class="texte">Creation of layout design and printing.</h3>
+            </div>
+            <!-- Répétez pour autant de projets que vous avez -->
+        </div>               
+    </main>
+    <footer>
+        <p><a href="https://www.instagram.com/cmoirox/">Instagram</a></p>
+        <p><a href="https://www.linkedin.com/in/roxane-rouault-b7b5541b6/">Linkedin</a></p>
+        <p><a href="https://www.behance.net/roxanerouault">Behance</a></p>
+        <p class="email-style">rouault.roxane@gmail.com</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner uniquement les liens spécifiques d'Instagram, Linkedin, et Behance
+            const specificLinks = document.querySelectorAll('footer p a[href*="instagram.com"], footer p a[href*="linkedin.com"], footer p a[href*="behance.net"]');
+    
+            specificLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Stocker le texte original et inverser le texte au survol
+                    const originalText = this.textContent;
+                    this.textContent = this.textContent.split('').reverse().join('');
+    
+                    // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                });
+            });
+        });
+    </script> 
+</body>
+</html>
+

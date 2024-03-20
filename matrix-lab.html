@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxane Rouault</title>
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div id="branding">
+                <a href="main.html" style="text-decoration: none; color: inherit;">
+                    <h1>Roxane Rouault</h1>
+                </a>
+                <a href="info.html" style="text-decoration: none; color: inherit;">
+                    <p>Info</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélection des liens dans le #branding
+            const brandingLinks = document.querySelectorAll('#branding a');
+    
+            brandingLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Vérification pour cibler le h1 ou p à l'intérieur du lien
+                    const textElement = this.querySelector('h1') || this.querySelector('p');
+                    if(textElement) {
+                        // Stocker le texte original et inverser le texte au survol
+                        const originalText = textElement.textContent;
+                        textElement.textContent = textElement.textContent.split('').reverse().join('');
+    
+                        // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                        setTimeout(() => {
+                            textElement.textContent = originalText;
+                        }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                    }
+                });
+            });
+        });
+    </script>
+    <main>
+        <div class="container-detail-title-projet">
+            <p>Matrix_Lab - 2023</p>
+        </div>
+        <div class="container-detail-subtitle-projet">
+            <div class="project-detail-placement">
+                <p>Photo & 3D Compositing</p>
+                <h3 class="presentation-projet">Creation of a series of experiments exploring 3D and the incorporation of real photoshoots. Use of Blender software for 3D rendering, texturing, lighting... Post-production and editing in Photoshop. The ambiance was meant to represent a dark, dystopian, and technological universe.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/g9j8bgcdfuztm63i7upkl/matrixlab1.png?rlkey=1o5crajes7sxzh3g468dvbiir&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/351u3gtl7vnsw94uapqnc/matrixlab2.png?rlkey=k2lph70kkox9as4ux0x4shvnq&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/6xo39blsrt5tka2c42gfw/matrixlab3.png?rlkey=xbv542sx0gyc7gmprr0hk6n9f&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/w8lwy5majkafa5r0r53w3/process_1.mp4?rlkey=wz1a8hvadhrav5qh4ioyzc2i8&raw=1" loop muted autoplay></video> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <h3 class="texte">Composition on the development of my work, from photography to 3D to retouching.</h3>
+                <img class="project-detail-image" src="https://www.dropbox.com/scl/fi/kx8behg2vaqhzqn1aonf2/matrixlab4.png?rlkey=9u977i6f4ui8im5ufvsrc6k1m&raw=1" alt="Description de l'image"> <!-- Mettre raw=1 à la place de dl=0 pour integration depuis dropbox -->
+                <h3 class="texte">Different unretouched photos from the shoot.</h3>
+            </div>
+            <!-- Répétez pour autant de projets que vous avez -->
+        </div>               
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const videos = document.querySelectorAll('.project-detail-video');
+      
+          videos.forEach(video => {
+            if ('playsInline' in video) {
+              video.playsInline = true;
+            } else {
+              video.webkitPlaysInline = true;
+            }
+      
+            video.play().catch(error => {
+              // Si la lecture automatique échoue, affichez un message d'erreur ou effectuez une action de secours
+              console.error('Error in autoplay:', error);
+            });
+          });
+        });
+      </script>
+    <footer>
+        <p><a href="https://www.instagram.com/cmoirox/">Instagram</a></p>
+        <p><a href="https://www.linkedin.com/in/roxane-rouault-b7b5541b6/">Linkedin</a></p>
+        <p><a href="https://www.behance.net/roxanerouault">Behance</a></p>
+        <p class="email-style">rouault.roxane@gmail.com</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner uniquement les liens spécifiques d'Instagram, Linkedin, et Behance
+            const specificLinks = document.querySelectorAll('footer p a[href*="instagram.com"], footer p a[href*="linkedin.com"], footer p a[href*="behance.net"]');
+    
+            specificLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Stocker le texte original et inverser le texte au survol
+                    const originalText = this.textContent;
+                    this.textContent = this.textContent.split('').reverse().join('');
+    
+                    // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                });
+            });
+        });
+    </script> 
+</body>
+</html>
+

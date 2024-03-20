@@ -1,0 +1,375 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'bruliadisplay';
+    src: url('fonts/brulia-display-webfont.woff2') format('woff2'),
+         url('fonts/brulia-display-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body { 
+    font-family: 'bruliadisplay', sans-serif;
+    padding: 0; 
+    overflow-x: hidden; /* Cache le scroll horizontal */
+    display: flex;
+    flex-direction: column; /* Organise le contenu du body en colonne */
+}
+
+.container-header { 
+    width: 100%; 
+    background: white; 
+    color: black; 
+    padding-top: 7px; 
+    min-height: 70px; 
+    border-bottom: black 0px solid; 
+}
+
+header h1, header p { 
+    margin-left: 20px;
+    font-size: 1em;
+    font-weight: 800; 
+    text-align: left;
+}
+
+header h1 {
+    margin-bottom: 3px; /* Ajustez cette valeur pour réduire la marge entre le h1 et le p */
+}
+
+header p { 
+    text-decoration: underline; /* Ajoute un trait de surlignage au p */
+    margin-top: 0; /* Réduit la marge en haut pour rapprocher le p du h1 */
+}
+
+header p:hover {
+    color: #e74a1D; /* Change la couleur du texte en orange au survol */
+    text-decoration: underline; /* Confirme qu'il n'y a pas de soulignement au survol */
+}
+
+main {
+    flex: 1; /* Permet au main de s'étendre et occuper l'espace disponible */
+    overflow-y: auto; /* Active le scroll vertical au besoin */
+}
+
+.container-main {
+    float: left; /* Floats left to align side by side */
+    width: 50%; /* Adjusts the width to take half of the container */
+    margin-top: 20px; /* Ajustez cette valeur selon l'espace désiré au-dessus du texte */
+    margin-bottom: 80px; 
+    min-height: 330px;
+}
+
+.container-main p {
+    margin-left: 20px; 
+    line-height: 1.2; 
+    font-size: 2em;
+    font-weight: 800; 
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.cursor {
+    display: inline-block;
+    width: 0px; /* Plus large pour un effet horizontal */
+    height: 0px; /* Plus mince pour l'aspect horizontal */
+    background-color: black;
+    vertical-align: center; /* Ajustez si nécessaire pour aligner avec le bas du texte */
+    animation: blink 1s infinite;
+}
+
+.container-right {
+    float: left; /* Floats left to align side by side */
+    width: 50%; /* Adjusts the width to take half of the container */
+    margin-top: 20px; /* Ajuste l'espacement du haut */
+}
+
+.container-right p {
+    margin-left: 20px; 
+    line-height: 1.2; 
+    font-size: 1.3em;
+}
+
+.ligne {
+    height: 1px; /* Définit l'épaisseur de la ligne */
+    background-color: black; /* Couleur de la ligne */
+    border: none; /* Supprime la bordure par défaut */
+    margin-top: 40px; /* Ajustez cette valeur selon l'espace désiré au-dessus du texte */
+    margin-bottom: 0px;
+}
+
+footer {
+    display: flex; /* Active Flexbox pour le conteneur footer */
+    justify-content: space-around; /* Répartit l'espace autour des éléments pour qu'ils s'étendent uniformément */
+    align-items: center; /* Centre les éléments verticalement */
+    text-align: center; /* Centre le texte de chaque élément */
+    padding: 5px; /* Ajoute un peu de padding autour du contenu du footer */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si l'écran est trop petit */
+}
+
+footer p {
+    margin: 0 10px; /* Réduit la marge autour des paragraphes pour les rapprocher */
+    font-size: 0.9em;
+    font-weight: 800;
+    word-spacing: normal;
+}
+
+.email-style {
+    margin: 0 10px; /* Réduit la marge autour des paragraphes pour les rapprocher */
+    color: #8C8C8C;
+    font-size: 0.9em;
+    font-weight: 800;
+    word-spacing: normal;
+}
+
+footer p a {
+    color: #000; /* Définit la couleur initiale des liens */
+    text-decoration: none; /* Les liens ne sont pas soulignés par défaut */
+}
+
+footer p a:hover, footer p a:active {
+    color: #e74a1D; /* Change la couleur au survol et au clic, couleur caractéristique de Linkedin */
+    text-decoration: underline; /* Souligne le lien au survol et au clic */
+}
+
+.project-module {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.project-module p {
+    margin: 0 0 10px 0;
+    font-size: 1.3em;
+    font-weight: 800; /* Augmente l'épaisseur du texte */
+}
+
+.project-subtitle {
+    margin: 0 0 10px 0;
+    font-size: 0.85em;
+    font-style: italic;
+    color: black;
+}
+
+.texte-credit-site {
+    margin: 0 0 10px 0;
+    font-size: 0.60em;
+    font-style: italic;
+    color: black;
+    margin-top: 40px; /* Ajustez cette valeur selon l'espace désiré au-dessus du texte */
+    margin-bottom: 1px;
+}
+
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.85em;
+}
+
+.project-info > span {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px; /* Ajustez si nécessaire */
+}
+
+.project-year {
+    font-style: italic; /* Applique le style italique */
+    font-size: 1.3em;
+}
+
+.project-tags {
+    color:#e74a1D;
+    font-size: 1.3em;
+    text-decoration: underline; /* Ajoute un trait de soulignage */
+    font-weight: 800; /* Augmente l'épaisseur du texte */
+}
+
+.project-tags:hover {
+    color: black; /* Change la couleur du texte au survol */
+}
+
+.video-style {
+    max-width: 100%; /* La vidéo ne dépassera pas la largeur de son conteneur */
+    height: auto; /* Ajuste la hauteur pour maintenir l'aspect ratio */
+    display: block; /* Assure que la vidéo n'est pas inline */
+    margin: 0 auto; /* Centre la vidéo si elle est plus petite que le conteneur */
+}
+
+.project-image {
+    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
+    height: auto; /* Ajuste automatiquement la hauteur pour maintenir l'aspect ratio */
+}
+
+/* Element des page html cliquable pour voir en detail les projets */
+
+.container-detail-title-projet {
+    float: left; /* Floats left to align side by side */
+    width: 50%; /* Adjusts the width to take half of the container */
+    margin-top: 20px; /* Ajuste l'espacement du haut */
+}
+
+.container-detail-title-projet p {
+    color:#e74a1D;
+    margin-left: 20px; 
+    line-height: 1.2; 
+    font-size: 1.3em;
+    font-weight: 800; 
+}
+
+.container-detail-subtitle-projet {
+    float: left; /* Floats left to align side by side */
+    width: 50%; /* Adjusts the width to take half of the container */
+    margin-top: 30px; /* Ajuste l'espacement du haut */
+}
+
+.container-detail-subtitle-projet p {
+    margin-left: 20px; 
+    line-height: 1.2; 
+    font-size: 1.3em;
+    font-weight: 800;
+}
+
+.project-detail-placement {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.project-detail-placement p {
+    margin: 0 0 10px 0;
+    font-size: 1.3em;
+    font-weight: 800; /* Augmente l'épaisseur du texte */
+}
+
+.presentation-projet {
+    margin: 0 0 10px 0;
+    font-size: 0.85em;
+    font-style: italic;
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.project-detail-image {
+    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
+    height: auto; /* Ajuste automatiquement la hauteur pour maintenir l'aspect ratio */
+}
+
+.texte {
+    margin: 0 0 10px 0;
+    font-size: 0.85em;
+    font-style: italic;
+    color: black;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.project-detail-video {
+    max-width: 100%; /* La vidéo ne dépassera pas la largeur de son conteneur */
+    height: auto; /* Ajuste la hauteur pour maintenir l'aspect ratio */
+    display: block; /* Assure que la vidéo n'est pas inline */
+    margin: 0 auto; /* Centre la vidéo si elle est plus petite que le conteneur */
+}
+
+.project-youtube-video {
+    width: 100%; /* La vidéo prendra la largeur complète de son conteneur */
+    height: auto; /* Laissez la hauteur s'ajuster automatiquement */
+    aspect-ratio: 16 / 9; /* Maintient un aspect ratio de 16:9 */
+    display: block; /* Assure que la vidéo n'est pas inline */
+    margin: 0 auto; /* Centre la vidéo si elle est plus petite que le conteneur */
+    margin-bottom: 10px;
+}
+
+.credit-horsfer {
+    margin: 0 0 10px 0;
+    font-size: 0.70em;
+    font-style: italic;
+    color: #e74a1D;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* Element de la page html info */
+
+
+.container-detail-subtitle-info {
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Organise les éléments en colonne */
+    justify-content: center; /* Centre horizontalement dans le conteneur */
+    align-items: center; /* Centre les éléments */
+    height: auto; /* Ajustez selon le contenu ou gardez à 70vh si nécessaire */
+    margin-top: 0; /* Ajustement si nécessaire */
+    width: 100%; /* Utiliser 100% pour une largeur responsive */
+    padding: 0px; /* Ajoute un peu d'espace autour du contenu */
+}
+
+.text-wrapper {
+    max-width: 80%; /* Ajustez selon la largeur désirée pour votre texte */
+    text-align: left; /* Garde le texte justifié à gauche */
+}
+
+.container-detail-subtitle-info p {
+    margin-left: 0px; 
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.titre-info-gros {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    text-align: left; /* Justifie le texte à gauche par défaut */
+    margin: 30px 0; /* Uniformise les marges */
+    font-size: 5em; /* Assure une taille de texte cohérente */
+    color: #e74a1D;
+    min-height: 250px;
+}
+
+.texte-info-gros, .texte-info-middle, .texte-info-small-color, .texte-info-small, .texte-info-skills {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    text-align: left; /* Justifie le texte à gauche par défaut */
+    margin: 30px 0; /* Uniformise les marges */
+    font-size: 5em; /* Assure une taille de texte cohérente */
+    color: #e74a1D;
+}
+
+.texte-info-middle {
+    font-size: 1.7em;
+    color: black;
+    margin-top: 100px; /* Ajustez cette valeur selon l'espace désiré au-dessus du texte */
+    margin-bottom: 100px; /* Ajustez cette valeur selon l'espace désiré en dessous du texte */
+}
+
+.texte-info-small-color {
+    font-size: 1.3em;
+    color: #e74a1D;
+    margin-top: 100px; /* Ajustez cette valeur selon l'espace désiré au-dessus du texte */
+    margin-bottom: 30px; /* Ajustez cette valeur selon l'espace désiré en dessous du texte */
+}
+
+.texte-info-small {
+    font-size: 1.3em;
+    color: black;
+    margin-top: 0px; /* Ajustez cette valeur selon l'espace désiré au-dessus du texte */
+    margin-bottom: 100px; /* Ajustez cette valeur selon l'espace désiré en dessous du texte */
+}
+
+.texte-info-skills {
+    font-size: 3em;
+    color: #e74a1D;
+    margin-top: 30px; /* Ajustez cette valeur selon l'espace désiré au-dessus du texte */
+    margin-bottom: 30px; /* Ajustez cette valeur selon l'espace désiré en dessous du texte */
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 680px) {
+    .container-main, .container-right, .container-detail-subtitle-projet, .container-detail-subtitle-info {
+        width: 100%; /* Makes sure containers take full width on smaller screens */
+        float: none;
+    }
+}
