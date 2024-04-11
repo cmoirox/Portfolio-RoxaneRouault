@@ -70,6 +70,24 @@
             <!-- Répétez pour autant de projets que vous avez -->
         </div>               
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const videos = document.querySelectorAll('.project-detail-video');
+      
+          videos.forEach(video => {
+            if ('playsInline' in video) {
+              video.playsInline = true;
+            } else {
+              video.webkitPlaysInline = true;
+            }
+      
+            video.play().catch(error => {
+              // Si la lecture automatique échoue, affichez un message d'erreur ou effectuez une action de secours
+              console.error('Error in autoplay:', error);
+            });
+          });
+        });
+      </script>
     <footer>
         <p><a href="https://www.instagram.com/cmoirox/">Instagram</a></p>
         <p><a href="https://www.linkedin.com/in/roxane-rouault-b7b5541b6/">Linkedin</a></p>
