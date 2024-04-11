@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxane Rouault</title>
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div id="branding">
+                <a href="main.html" style="text-decoration: none; color: inherit;">
+                    <h1>Roxane Rouault</h1>
+                </a>
+                <a href="info.html" style="text-decoration: none; color: inherit;">
+                    <p>Info</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélection des liens dans le #branding
+            const brandingLinks = document.querySelectorAll('#branding a');
+    
+            brandingLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Vérification pour cibler le h1 ou p à l'intérieur du lien
+                    const textElement = this.querySelector('h1') || this.querySelector('p');
+                    if(textElement) {
+                        // Stocker le texte original et inverser le texte au survol
+                        const originalText = textElement.textContent;
+                        textElement.textContent = textElement.textContent.split('').reverse().join('');
+    
+                        // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                        setTimeout(() => {
+                            textElement.textContent = originalText;
+                        }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                    }
+                });
+            });
+        });
+    </script>
+    <main>
+        <div class="container-detail-title-projet">
+            <p>S/Flowers - 2024</p>
+        </div>
+        <div class="container-detail-subtitle-projet">
+            <div class="project-detail-placement">
+                <p>TouchDesigner</p>
+                <h3 class="presentation-projet">Creation of audio-reactive flower videos using TouchDesigner and nodes to generate and animate the flowers based on the sound of the video. The final videos are abstract visual compositions.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <iframe class="project-youtube-video" width="1080" height="1920" src="https://www.youtube.com/embed/ZyckYsRSWeY?si=8ob8fTmU9V0LR1Ej" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/3ip64xuwyneagmdxb6k4z/NODES-BLEU1_COMP_1_1.mp4?rlkey=q7l7vjqzrb76vthd9fvfmvdxx&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/83bdd6y9wo5zzgmlnsid4/PARTICULE-BLEU1_COMP.mp4?rlkey=78nfdp1g00jeodjmd5h5m5x4i&raw=1" loop muted autoplay></video>
+                <h3 class="texte">Series number 1.</h3>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/2ow8vo4oy55ybsxdyud2o/NODES-VERT1_COMP_1_1.mp4?rlkey=sbq6nrrjywy6aur5n4hc1y9yf&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/1v0q5mp9bdjggkuw7i4tt/PARTICULE-VERT1_COMP.mp4?rlkey=bky16f18jo76hy2ft16lxvnec&raw=1" loop muted autoplay></video>
+                <h3 class="texte">Series number 2.</h3>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/bo4qynft3wrmdtwf0wr6o/NODES-BLEU2_COMP_1_1.mp4?rlkey=zl0nbzrsfc00q4bddyqr3cnew&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/ioeculke7k72wuzasqi4s/PARTICULE-VERT3_COMP.mp4?rlkey=97i7liuzltks7j4yb0ek1q6py&raw=1" loop muted autoplay></video>
+                <h3 class="texte">Series number 3.</h3>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/sc11qgd9e0egy1fkjnooe/NODES-VERT2_COMP_1_1.mp4?rlkey=0o0iwjlwcq6ozi21zvtgexgjx&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/lg5sp1idjxceq265p7fqq/PARTICULE-VERT2_COMP.mp4?rlkey=yiuwpo5tef2pye56lqycipmw2&raw=1" loop muted autoplay></video>
+                <h3 class="texte">Series number 4.</h3>
+            </div>
+            <!-- Répétez pour autant de projets que vous avez -->
+        </div>               
+    </main>
+    <footer>
+        <p><a href="https://www.instagram.com/cmoirox/">Instagram</a></p>
+        <p><a href="https://www.linkedin.com/in/roxane-rouault-b7b5541b6/">Linkedin</a></p>
+        <p><a href="https://www.behance.net/roxanerouault">Behance</a></p>
+        <p class="email-style">rouault.roxane@gmail.com</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner uniquement les liens spécifiques d'Instagram, Linkedin, et Behance
+            const specificLinks = document.querySelectorAll('footer p a[href*="instagram.com"], footer p a[href*="linkedin.com"], footer p a[href*="behance.net"]');
+    
+            specificLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Stocker le texte original et inverser le texte au survol
+                    const originalText = this.textContent;
+                    this.textContent = this.textContent.split('').reverse().join('');
+    
+                    // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                });
+            });
+        });
+    </script> 
+</body>
+</html>
+
