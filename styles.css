@@ -365,6 +365,29 @@ footer p a:hover, footer p a:active {
     margin-bottom: 30px; /* Ajustez cette valeur selon l'espace désiré en dessous du texte */
 }
 
+.sound-button1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    margin-top: 1%;
+    cursor: pointer;
+  }
+
+  .video-cybertruck {
+    max-width: 100%; /* La vidéo ne dépassera pas la largeur de son conteneur */
+    height: auto; /* Ajuste la hauteur pour maintenir l'aspect ratio */
+    display: block; /* Assure que la vidéo n'est pas inline */
+    margin: 0 auto; /* Centre la vidéo si elle est plus petite que le conteneur */
+}
+
 /* Responsive */
 
 @media only screen and (max-width: 680px) {
