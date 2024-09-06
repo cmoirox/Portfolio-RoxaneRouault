@@ -277,6 +277,13 @@ footer p a:hover, footer p a:active {
     margin: 0 auto; /* Centre la vidéo si elle est plus petite que le conteneur */
 }
 
+.project-sflowers-video {
+    max-width: 100%; /* La vidéo ne dépassera pas la largeur de son conteneur */
+    height: auto; /* Ajuste la hauteur pour maintenir l'aspect ratio */
+    display: block; /* Assure que la vidéo n'est pas inline */
+    margin: 0 auto; /* Centre la vidéo si elle est plus petite que le conteneur */
+}
+
 .project-youtube-video {
     width: 100%; /* La vidéo prendra la largeur complète de son conteneur */
     height: auto; /* Laissez la hauteur s'ajuster automatiquement */
