@@ -53,7 +53,8 @@
                 <p>TouchDesigner</p>
                 <h3 class="presentation-projet">Creation of audio-reactive flower videos using TouchDesigner and nodes to generate and animate the flowers based on the sound of the video. The final videos are abstract visual compositions.</h3>
                 <!-- Exemple d'intégration vidéo pour le projet -->
-                <iframe class="project-youtube-video" width="1080" height="1920" src="https://www.youtube.com/embed/ZyckYsRSWeY?si=8ob8fTmU9V0LR1Ej" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <video class="project-sflowers-video" src="https://www.dropbox.com/scl/fi/niyrl2tdpk69lv5vqyb7v/1920x1080-SadeFlowers.mp4?rlkey=o85bbjqpwgw84f11bhmcl5rh7&st=so18g69h&raw=1" loop controls autoplay></video>
+                <h3 class="texte">Full audio-reactive video</h3>
                 <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/3ip64xuwyneagmdxb6k4z/NODES-BLEU1_COMP_1_1.mp4?rlkey=q7l7vjqzrb76vthd9fvfmvdxx&raw=1" loop muted autoplay></video>
                 <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/83bdd6y9wo5zzgmlnsid4/PARTICULE-BLEU1_COMP.mp4?rlkey=78nfdp1g00jeodjmd5h5m5x4i&raw=1" loop muted autoplay></video>
                 <h3 class="texte">Series number 1.</h3>
@@ -72,7 +73,7 @@
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-          const videos = document.querySelectorAll('.project-detail-video');
+          const videos = document.querySelectorAll('.project-detail-video, .project-sflowers-video');
       
           videos.forEach(video => {
             if ('playsInline' in video) {
@@ -115,4 +116,3 @@
     </script> 
 </body>
 </html>
-
