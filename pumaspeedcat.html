@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxane Rouault</title>
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.dropbox.com/scl/fi/wk4bp967fqqqlvd7vcepx/favicon-16x16.png?rlkey=5ochvuo1rd5qqipz7i5hjzep1&raw=1">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.dropbox.com/scl/fi/ndgfr5znh6kn12so3hz5h/favicon-32x32.png?rlkey=zo0j8fn8390mf9mjnd3sxiaq5&raw=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div id="branding">
+                <a href="main.html" style="text-decoration: none; color: inherit;">
+                    <h1>Roxane Rouault</h1>
+                </a>
+                <a href="info.html" style="text-decoration: none; color: inherit;">
+                    <p>Info</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélection des liens dans le #branding
+            const brandingLinks = document.querySelectorAll('#branding a');
+    
+            brandingLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Vérification pour cibler le h1 ou p à l'intérieur du lien
+                    const textElement = this.querySelector('h1') || this.querySelector('p');
+                    if(textElement) {
+                        // Stocker le texte original et inverser le texte au survol
+                        const originalText = textElement.textContent;
+                        textElement.textContent = textElement.textContent.split('').reverse().join('');
+    
+                        // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                        setTimeout(() => {
+                            textElement.textContent = originalText;
+                        }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                    }
+                });
+            });
+        });
+    </script>
+    <main>
+        <div class="container-detail-title-projet">
+            <p>Puma Speedcat - 2024</p>
+        </div>
+        <div class="container-detail-subtitle-projet">
+            <div class="project-detail-placement">
+                <p>VFX/3D</p>
+                <h3 class="presentation-projet">Creation of a short teaser advertisement for the Puma Speedcat. Compositing, green screen integration, VFX. Use of 3D and Unreal Engine 5. Working on the aesthetics and artistic direction.</h3>
+                <!-- Exemple d'intégration vidéo pour le projet -->
+                <video class="project-speedcat-video" src="https://www.dropbox.com/scl/fi/6625wcvsaefq5zapueca0/PUMA-SPEEDCAT-1920x1080.mp4?rlkey=ijl32vdmx2coioaomu0i037bg&st=42xn6v5l&raw=1" loop controls autoplay></video>
+                <h3 class="texte2">Full concept ></h3>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/bz6tuyr7vfdvt2qgh1ysx/SPEEDCAT-1920x1080.mp4?rlkey=13a4496n4ikzvqrnb1x0hqnsr&st=daz7cqcl&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/taef1q2rbozy18eg7irxx/ASSIS1-greenscreen.mp4?rlkey=dpodd4bjtd39dyq5z3c67xze1&st=tdkm669l&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/atzrioiv1cbw5b67h5qiu/PARTICULES-1920x1080.mp4?rlkey=qr1qevgiwgw425p8lpogo7209&st=7arl3q8q&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/vfqsjdmidd233ayq2fzsy/ASSIS2-greenscreen.mp4?rlkey=w0e26dwqvsfcu7m8c8j88slza&st=9fid6o0m&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/rszokkdx56pbdcjv8mmvs/LOGO-PUMA-1920-1080.mp4?rlkey=c1eq83yad3y1aysujt4d2cdxm&st=lani694h&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/6n7h7o90z5q42pi3hc7i7/SMALL-LOGO-1920x1080.mp4?rlkey=41l571n3m1vwl54rfxt2ecjgn&st=pfma1eio&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/n6hu7hmv8z5nux3j5rux6/MARCHE-vfinal-2.mp4?rlkey=nniig8j2fn5l8iu7vykedko4d&st=xcwpbrah&raw=1" loop muted autoplay></video>
+                <video class="project-detail-video" src="https://www.dropbox.com/scl/fi/uuxxye63olxnwgpfx06p6/MULTI.mp4?rlkey=707miyqiq3y1kn44top9uqhre&st=c3mq8tuh&raw=1" loop muted autoplay></video>
+                <h3 class="texte">Use of 3D and Unreal Engine 5.</h3>
+            </div>
+            <!-- Répétez pour autant de projets que vous avez -->
+        </div>               
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const videos = document.querySelectorAll('.project-detail-video, .project-sflowers-video');
+      
+          videos.forEach(video => {
+            if ('playsInline' in video) {
+              video.playsInline = true;
+            } else {
+              video.webkitPlaysInline = true;
+            }
+      
+            video.play().catch(error => {
+              // Si la lecture automatique échoue, affichez un message d'erreur ou effectuez une action de secours
+              console.error('Error in autoplay:', error);
+            });
+          });
+        });
+      </script>
+    <footer>
+        <p><a href="https://www.instagram.com/cmoirox/">Instagram</a></p>
+        <p><a href="https://www.linkedin.com/in/roxane-rouault-b7b5541b6/">Linkedin</a></p>
+        <p><a href="https://www.behance.net/roxanerouault">Behance</a></p>
+        <p class="email-style">rouault.roxane@gmail.com</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner uniquement les liens spécifiques d'Instagram, Linkedin, et Behance
+            const specificLinks = document.querySelectorAll('footer p a[href*="instagram.com"], footer p a[href*="linkedin.com"], footer p a[href*="behance.net"]');
+    
+            specificLinks.forEach(a => {
+                a.addEventListener('mouseover', function() {
+                    // Stocker le texte original et inverser le texte au survol
+                    const originalText = this.textContent;
+                    this.textContent = this.textContent.split('').reverse().join('');
+    
+                    // Utiliser setTimeout pour rétablir le texte original après 1 seconde
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 100); // Durée de l'effet en millisecondes (1000 ms = 1 seconde)
+                });
+            });
+        });
+    </script> 
+</body>
+</html>
