@@ -187,13 +187,13 @@ pre {
 </head>
 <body>
     <div class="bouton">
-        <div class="texte">Loading :) ...</div>
+        <div class="texte">Loading > ...</div>
     </div>
     <script>
         const element = document.querySelector('.texte');
         // Supposons que la partie animée est "Loading :)" et que vous voulez garder " ..." statique
         const animatedText = "Loading";
-        const staticText = " :)"; // Texte statique à garder à la fin
+        const staticText = " >"; // Texte statique à garder à la fin
         element.textContent = staticText; // Initialisation avec le texte statique
         let i = 0;
         let backward = false;
@@ -254,7 +254,7 @@ pre {
     <script>
         window.addEventListener('load', function() {
             // Définit la durée pendant laquelle la page index.html reste affichée (en millisecondes)
-            const duration = 7000 // Par exemple, 7000 millisecondes (7 secondes)
+            const duration = 5000 // Par exemple, 7000 millisecondes (7 secondes)
 
             setTimeout(function() {
                 // Redirige l'utilisateur vers main.html après la durée spécifiée
